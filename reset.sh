@@ -2,7 +2,7 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install fish fisher pnpm zoxide git
+brew install fish fisher pnpm git
 brew install --cask 1password discord expressvpn firefox qbittorrent raycast spotify visual-studio-code
 
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
