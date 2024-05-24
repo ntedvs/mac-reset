@@ -32,11 +32,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fish -c "fish_add_path ~/.cargo/bin"
 
 mkdir -p ~/stuff/code
-mkdir ~/stuff/school
 touch ~/.hushlogin
 
 echo -e "Host naenate\n  HostName github.com\n  IdentityFile ~/.ssh/naenate" | tee ~/.ssh/config
 
 fish -c "fisher install jorgebucaran/nvm.fish"
 fish -c "nvm install lts"
-echo "set -U nvm_default_version v\nIN FISH"
+echo "set -U nvm_default_version"
