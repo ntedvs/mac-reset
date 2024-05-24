@@ -10,7 +10,7 @@ chsh -s /usr/local/bin/fish
 fish -c "set -U fish_greeting"
 fish -c fish_vi_key_bindings
 echo -e 'function fish_prompt\n  set_color $fish_color_cwd\n  echo -n (prompt_pwd)\n  set_color normal\n  echo -n " => "\nend' | tee ~/.config/fish/functions/fish_prompt.fish
-echo -e 'function sl\n  ls -A1 $argv\n  end' | tee ~/.config/fish/functions/sl.fish
+echo -e 'function sl\n  ls -A1 $argv\nend' | tee ~/.config/fish/functions/sl.fish
 echo -e "if status is-interactive\n  eval (ssh-agent -c) > /dev/null\n  zoxide init --cmd cd fish | source\nend" | tee ~/.config/fish/config.fish
 
 defaults write com.apple.dock autohide -bool true
