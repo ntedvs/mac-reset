@@ -24,8 +24,10 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write com.apple.menuextra.clock Show24Hour -bool true
 defaults write com.apple.menuextra.clock ShowDayOfWeek -bool false
 defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.notificationcenterui widgets '()'
 killall Dock
 killall ControlStrip
+killall NotificationCenter
 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
