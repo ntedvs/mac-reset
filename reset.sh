@@ -8,7 +8,8 @@ brew install --cask 1password expressvpn firefox raycast spotify visual-studio-c
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 fish -c "set -U fish_greeting"
-fish -c fish_vi_key_bindings
+fish -c "fish_vi_key_bindings"
+mkdir -p ~/.config/fish/functions && touch ~/.config/fish/functions/fish_prompt.fish
 echo -e 'function fish_prompt\n  set_color $fish_color_cwd\n  echo -n (prompt_pwd)\n  set_color normal\n  echo -n " => "\nend' | tee ~/.config/fish/functions/fish_prompt.fish
 echo -e 'function sl\n  ls -A1 $argv\nend' | tee ~/.config/fish/functions/sl.fish
 echo -e "if status is-interactive\n  eval (ssh-agent -c) > /dev/null\nend" | tee ~/.config/fish/config.fish
@@ -20,7 +21,6 @@ defaults write com.apple.dock wvous-br-corner -int 0
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock show-process-indicators -bool false
 defaults write com.apple.controlstrip FullCustomized '(NSTouchBarItemIdentifierFlexibleSpace, "com.apple.system.group.keyboard-brightness", "com.apple.system.group.brightness", "com.apple.system.group.volume")'
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write com.apple.menuextra.clock Show24Hour -bool true
 defaults write com.apple.menuextra.clock ShowDayOfWeek -bool false
 defaults write com.apple.dock persistent-apps -array
@@ -39,4 +39,4 @@ echo -e "Host naenate\n  HostName github.com\n  IdentityFile ~/.ssh/naenate" | t
 
 fish -c "fisher install jorgebucaran/nvm.fish"
 fish -c "nvm install lts"
-echo "set -U nvm_default_version"
+echo "AFTER RUNNING FISH set -U nvm_default_version"
