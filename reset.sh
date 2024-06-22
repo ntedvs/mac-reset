@@ -3,7 +3,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install fish fisher pnpm git
-brew install --cask 1password expressvpn firefox raycast spotify visual-studio-code
+brew install --cask 1password expressvpn firefox raycast spotify visual-studio-code tor-browser qbittorrent zoom
 
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
