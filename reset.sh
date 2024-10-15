@@ -32,5 +32,5 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 fish -c "fisher install jorgebucaran/nvm.fish"
 fish -c "nvm install lts"
-read version
-fish -c "set -U nvm_default_version $version"
+read nv
+fish -c "set -U nvm_default_version $nv"
