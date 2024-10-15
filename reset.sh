@@ -3,15 +3,16 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install fish fisher pnpm git
-brew install --cask 1password expressvpn firefox raycast spotify visual-studio-code
+brew install --cask 1password firefox raycast spotify visual-studio-code
 
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
+echo '/bin/bash\n/usr/local/bin/fish' >> /etc/shells
 chsh -s /usr/local/bin/fish
+
 fish -c "set -U fish_greeting"
-fish -c "fish_vi_key_bindings"
+
 mkdir -p ~/.config/fish/functions
-echo -e 'function fish_prompt\n  set_color $fish_color_cwd\n  echo -n (prompt_pwd)\n  set_color normal\n  echo -n " => "\nend' | tee ~/.config/fish/functions/fish_prompt.fish
-echo -e 'function sl\n  ls -A1 $argv\nend' | tee ~/.config/fish/functions/sl.fish
+echo 'function fish_prompt\n  set_color $fish_color_cwd\n  echo -n (prompt_pwd)\n  set_color normal\n  echo -n " => "\nend' > ~/.config/fish/functions/fish_prompt.fish
+echo 'function sl\n  ls -A1 $argv\nend' > ~/.config/fish/functions/sl.fish
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -27,9 +28,7 @@ defaults write com.apple.menuextra.clock Show24Hour -bool true
 defaults write com.apple.menuextra.clock ShowDayOfWeek -bool false
 killall Dock
 
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-
 fish -c "fisher install jorgebucaran/nvm.fish"
 fish -c "nvm install lts"
-
-# set -U nvm_default_version
+read version
+fish -c "set -U nvm_default_version $version"
