@@ -7,7 +7,6 @@ brew install --cask 1password firefox raycast spotify visual-studio-code
 
 echo '/bin/bash\n/usr/local/bin/fish' > /etc/shells
 chsh -s /usr/local/bin/fish
-
 fish -c "set -U fish_greeting"
 
 mkdir -p ~/.config/fish/functions
