@@ -28,6 +28,8 @@ defaults write com.apple.menuextra.clock Show24Hour -bool true
 defaults write com.apple.menuextra.clock ShowDayOfWeek -bool false
 killall Dock
 
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
 fish -c "fisher install jorgebucaran/nvm.fish"
 fish -c "nvm install lts"
 read version
