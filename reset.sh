@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
 brew install fish fisher pnpm git
 brew install --cask 1password firefox raycast spotify visual-studio-code
@@ -35,4 +35,4 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # read -p "Node Version: " nv
 # fish -c "set -U nvm_default_version $nv"
 
-fish -c "pnpm completion fish > ~/.config/fish/completions/pnpm.fish"
+# fish -c "pnpm completion fish > ~/.config/fish/completions/pnpm.fish"
