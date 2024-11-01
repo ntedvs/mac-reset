@@ -34,3 +34,5 @@ fish -c "fisher install jorgebucaran/nvm.fish"
 fish -c "nvm install lts"
 read -p "Node Version: " nv
 fish -c "set -U nvm_default_version $nv"
+
+fish -c "pnpm completion fish > ~/.config/fish/completions/pnpm.fish"
