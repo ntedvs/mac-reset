@@ -5,10 +5,9 @@
 brew install fish fisher pnpm git
 brew install --cask 1password firefox raycast spotify visual-studio-code
 
-echo -e "/bin/bash\n/usr/local/bin/fish" | sudo tee /etc/shells
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 fish -c "set -U fish_greeting"
-fish -c "fish_vi_key_bindings"
 
 mkdir -p ~/.config/fish/functions
 echo -e 'function fish_prompt\n    set_color $fish_color_cwd\n    echo -n (prompt_pwd)\n    set_color normal\n    echo -n " => "\nend' > ~/.config/fish/functions/fish_prompt.fish
@@ -31,10 +30,3 @@ defaults delete com.apple.dock persistent-others
 killall Dock
 
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-
-# fish -c "fisher install jorgebucaran/nvm.fish"
-# fish -c "nvm install lts"
-# read -p "Node Version: " nv
-# fish -c "set -U nvm_default_version $nv"
-
-# fish -c "pnpm completion fish > ~/.config/fish/completions/pnpm.fish"
