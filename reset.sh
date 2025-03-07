@@ -15,7 +15,7 @@ echo -e 'function sl\n    ls -A1 $argv\nend' > ~/.config/fish/functions/sl.fish
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-mkdir -p ~/stuff/code
+mkdir ~/code
 touch ~/.hushlogin
 
 defaults write com.apple.dock autohide -bool true
