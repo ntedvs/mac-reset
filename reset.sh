@@ -23,7 +23,6 @@ defaults write com.apple.dock autohide-delay -float 1000
 defaults write com.apple.dock no-bouncing -bool true
 defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock show-process-indicators -bool false
-# defaults write com.apple.menuextra.clock Show24Hour -bool true
 defaults write com.apple.menuextra.clock ShowDayOfWeek -bool false
 defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
