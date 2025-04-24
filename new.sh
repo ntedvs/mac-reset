@@ -9,7 +9,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 mkdir -p ~/.config/fish/functions
-fish -c "set -U fish_greeting"
+fish -c 'set -U fish_greeting'
+fish -c 'fisher install jorgebucaran/nvm.fish && nvm install lts && set -U nvm_default_version (nvm current)'
 echo -e 'function fish_prompt\n    set_color $fish_color_cwd\n    echo -n (prompt_pwd)\n    set_color normal\n    echo -n " => "\nend' > ~/.config/fish/functions/fish_prompt.fish
 echo -e 'function sl\n    ls -A1 $argv\nend' > ~/.config/fish/functions/sl.fish
 echo -e 'function ru\n    sudo rm -rf .cache .lesshst .npm .profile .viminfo .zsh_history .zsh_sessions .zshenv $argv\nend' > ~/.config/fish/functions/ru.fish
